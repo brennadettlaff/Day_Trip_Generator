@@ -1,0 +1,1 @@
+print("Day Trip Generator")
