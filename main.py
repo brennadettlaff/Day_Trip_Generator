@@ -1,13 +1,11 @@
-print("Colorado Day Trip Generator")
-
+##List of locations
 destinations = ["Denver", "Aspen", "Colorado Springs", "Glenwood Springs", "Durango", "Morrison", "Estas Park", "Grand Junction"]
 
 ##List of transportation
-modes_of_transportation = ["car", "bus", "shuttle"]                           ##Morrison, Estas Park
-modes_of_transportation_all = ["plane", "train", "car", "bus", "shuttle"]     ##Denver, Grand Junction
-modes_of_transportation_plane = ["plane", "car", "bus", "shuttle"]            ##Aspen, Colorado Springs, Durango
-modes_of_transportation_train = ["train", "car", "bus", "shuttle"]            ##Glenwood Springs
-
+transportation_modes_general = ["car", "bus", "shuttle"]                           ##Morrison, Estas Park
+transportation_modes_all = ["plane", "train", "car", "bus", "shuttle"]     ##Denver, Grand Junction
+transportation_modes_plane = ["plane", "car", "bus", "shuttle"]            ##Aspen, Colorado Springs, Durango
+transportation_modes_train = ["train", "car", "bus", "shuttle"]            ##Glenwood Springs
 
 #Lists of Entertainment 
 denver_entertainment = ["go shopping at 16th St Mall", "visit Denver Zoo", "visit Union Station"]         
@@ -27,4 +25,13 @@ glensprings_restaurants = ["CO Ranch House", "Vicco's Charcoalburger Drive-In", 
 durango_restaurants = ["Derailed Pour House", "Rice Monkeys", "El Moro Tavern", "Diamond Belle Saloon", "Steamworks Brewing Company"]
 morrison_restaurants = ["The Fort Resaurant", "Morrison Inn", "Red Rocks Grill", "Sit N Bull Saloon", "Twin Forks Tavern"]
 grandjunct_restaurants = ["Bin 707 Foodbar", "il Bistro Italiano", "Kannah Creek Brewing Company", "Rockslide Restaurant", "Pufferbelly Station"]
+
+
+def generate_item(list_to_use):
+    import random
+    return random.choice(list_to_use)
+
+trip_destitantion = generate_item(destinations)
+print(f"We have selected {trip_destitantion} for your destitination.")
+
 
