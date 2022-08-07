@@ -35,4 +35,16 @@ def select_item(list_to_use, type_of_item):
     generated_item = generate_item(list_to_use)                                
     print(f"We have selected {generated_item} for your {type_of_item}.") 
 
+def user_confirmation(list_to_use, type_of_item):
+    while True:
+        user_input = input(f"Is this an acceptible {type_of_item}? (enter y/n): ")
+        if user_input == "y":
+            print("Perfect, lets move on.")
+            break
+        elif user_input == "n":
+            select_item(list_to_use, type_of_item)                      #select function
+        else:
+            print("Please answer y or yes or n for no.")
+
 select_item(destinations, "destination")
+user_confirmation(destinations, "destination")
