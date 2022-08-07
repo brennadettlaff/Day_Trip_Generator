@@ -38,13 +38,19 @@ def select_item(list_to_use, type_of_item):
 def user_confirmation(list_to_use, type_of_item):
     while True:
         user_input = input(f"Is this an acceptible {type_of_item}? (enter y/n): ")
-        if user_input == "y":
+        if user_input == "y" or user_input == "Y":
             print("Perfect, lets move on.")
             break
-        elif user_input == "n":
+        elif user_input == "n" or user_input == "N":
             select_item(list_to_use, type_of_item)                      #select function
         else:
             print("Please answer y or yes or n for no.")
 
-select_item(destinations, "destination")
-user_confirmation(destinations, "destination")
+def combine_select(list_to_use, type_of_item):
+    select_item(list_to_use, type_of_item)
+    user_confirmation(list_to_use, type_of_item)
+
+combine_select(destinations, "destination")
+combine_select(transportation_modes_all, "transportation")
+combine_select(denver_entertainment, "entertainment")
+combine_select(denver_restaurants, "resaurant")
