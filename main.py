@@ -31,7 +31,8 @@ def generate_item(list_to_use):
     import random
     return random.choice(list_to_use)
 
-trip_destitantion = generate_item(destinations)
-print(f"We have selected {trip_destitantion} for your destitination.")
+def select_item(list_to_use, type_of_item):
+    generated_item = generate_item(list_to_use)                                
+    print(f"We have selected {generated_item} for your {type_of_item}.") 
 
-
+select_item(destinations, "destination")
