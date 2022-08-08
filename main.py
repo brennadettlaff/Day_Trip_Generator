@@ -33,30 +33,28 @@ def generate_item(list_to_use):
 
 def select_item(list_to_use, type_of_item):
     generated_item = generate_item(list_to_use)                                
-    print(f"We have selected {generated_item} for your {type_of_item}.") 
+    print(f"We have selected {generated_item} for your {type_of_item}.")
+    return generated_item 
 
 def user_confirmation(list_to_use, type_of_item):
+    select_item(list_to_use, type_of_item)
     while True:
         user_input = input(f"Is this an acceptible {type_of_item}? (enter y/n): ")
         if user_input == "y" or user_input == "Y":
             print("Perfect, lets move on.")
             break
         elif user_input == "n" or user_input == "N":
-            select_item(list_to_use, type_of_item)                      #select function
+            select_item(list_to_use, type_of_item)                     
         else:
             print("Please answer y or yes or n for no.")
 
-def combine_select(list_to_use, type_of_item):                          #combines selection and user confirmation
-    select_item(list_to_use, type_of_item)
-    user_confirmation(list_to_use, type_of_item)
-
-
 def select_other(trans_list, ent_list, rest_list):              ##combine selections for transportation, entertainment, and restauraunts
-    combine_select(trans_list, "transportation")
-    combine_select(ent_list, "entertainment")
-    combine_select(rest_list, "restaurant")
+    user_confirmation(trans_list, "transportation")
+    user_confirmation(ent_list, "entertainment")
+    user_confirmation(rest_list, "restaurant")
 
-combine_select(destinations, "destinations")
+
+user_confirmation(destinations, "destinations")
 select_other(transportation_modes_all, denver_entertainment, denver_restaurants)
 
 
