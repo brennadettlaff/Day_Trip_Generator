@@ -46,11 +46,17 @@ def user_confirmation(list_to_use, type_of_item):
         else:
             print("Please answer y or yes or n for no.")
 
-def combine_select(list_to_use, type_of_item):
+def combine_select(list_to_use, type_of_item):                          #combines selection and user confirmation
     select_item(list_to_use, type_of_item)
     user_confirmation(list_to_use, type_of_item)
 
-combine_select(destinations, "destination")
-combine_select(transportation_modes_all, "transportation")
-combine_select(denver_entertainment, "entertainment")
-combine_select(denver_restaurants, "resaurant")
+
+def select_other(trans_list, ent_list, rest_list):              ##combine selections for transportation, entertainment, and restauraunts
+    combine_select(trans_list, "transportation")
+    combine_select(ent_list, "entertainment")
+    combine_select(rest_list, "restaurant")
+
+combine_select(destinations, "destinations")
+select_other(transportation_modes_all, denver_entertainment, denver_restaurants)
+
+
