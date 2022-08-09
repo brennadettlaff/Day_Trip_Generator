@@ -80,6 +80,8 @@ def match_lists(selected_destination):
         final_selection = select_other(transportation_modes_general, estaspark_entertainment, estaspark_restaurants)
     return (final_selection)
 
+
+print("Welcome to the Colorado Day Trip Generator! We will help you decide where to go and what to do for your vacation!")
 select_destination = user_confirmation(destinations, "destination")
 outcome = match_lists(select_destination)
 
