@@ -79,3 +79,10 @@ def match_lists(selected_destination):
     elif selected_destination == "Grand Junction":
         final_selection = select_other(transportation_modes_general, estaspark_entertainment, estaspark_restaurants)
     return (final_selection)
+
+select_destination = user_confirmation(destinations, "destination")
+outcome = match_lists(select_destination)
+
+print(f"You have selected for you to travel to {select_destination} by {outcome[0]}. You will be {outcome[1]} and eating at {outcome[2]}.")
+
+
